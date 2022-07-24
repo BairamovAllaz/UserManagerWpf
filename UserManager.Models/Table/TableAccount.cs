@@ -29,9 +29,9 @@ public class TableAccount : Db,IGetTable<Account>,IAddToTable<Account>
         return list; 
     }
 
-    public void AddToTable(Account obj)
+    public int AddToTable(Account obj)
     {
         var sql = $"INSERT INTO table_account (login,password,role_id) VALUES ('{obj.Login}','{obj.Password}','{obj.RoleId}')";
-        NoQuery(sql);
+        return NoQuery(sql);
     }
 }

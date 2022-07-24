@@ -20,10 +20,10 @@ public abstract class Db
         _command.CommandText = sql;
         _result = _command.ExecuteReader();
     }
-    protected void NoQuery(string sql)
+    protected int NoQuery(string sql)
     {
         _db.Open();
         _command.CommandText = sql;
-        _command.ExecuteNonQuery();
+        return _command.ExecuteNonQuery();
     }
 }

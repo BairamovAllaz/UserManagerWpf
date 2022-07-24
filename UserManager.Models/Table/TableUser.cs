@@ -26,9 +26,9 @@ public class TableUser : Db,IGetTable<User>,IAddToTable<User>
         return list; 
     }
 
-    public void AddToTable(User obj)
+    public int AddToTable(User obj)
     {
         var sql = $"INSERT INTO table_user (user_id,first_name,last_name,email,photo) VALUES ('{obj.Id}','{obj.FirstName}','{obj.LastName}','{obj.Email}','{obj.PhotoUrl}')";
-        NoQuery(sql);
+        return NoQuery(sql);
     }
 }

@@ -2,5 +2,5 @@
 
 public interface IAddToTable<in T>
 {
-    public void AddToTable(T obj);
+    public int AddToTable(T obj);
 }
