@@ -5,8 +5,83 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:local="clr-namespace:UserManager.App.Windows.Authorization"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="Authorization"
+        Height="550"
+        Width="450"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <ResourceDictionary Source="AuthorizationWindowStyle.xaml"/>
+    </Window.Resources>
+    <StackPanel>
+        <Label x:Name="Title"
+               Content="Authorization"
+               Style="{DynamicResource StyleTitle}"/>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="LabelLogin"
+                       Content="_Login"
+                       Target="{Binding ElementName=InputLogin}"
+                       Style="{DynamicResource StyleLabel}"/>
+                <TextBox x:Name="InputLogin"
+                         Style="{DynamicResource StyleInput}"/>
+            </StackPanel>    
+            
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="LabelPassword"
+                       Content="Password"
+                       Style="{DynamicResource StyleLabel}"/>
+                <PasswordBox x:Name="InputPassword"
+                             Style="{DynamicResource StylePassword}"/>
+            </StackPanel>  
+            
+            <StackPanel Style="{DynamicResource StyleStackHorizontalCenter}">
+               <Button x:Name="ButtonClear"
+                       Content="Clear">
+                   <Button.Style>
+                        <Style BasedOn="{StaticResource StyleButtonClear}"
+                               TargetType="{x:Type Button}">
+                            <Style.Triggers>
+                                <MultiDataTrigger>
+                                    <MultiDataTrigger.Conditions>
+                                       <Condition Binding="{Binding ElementName=InputLogin,Path=Text.Length}" Value="0"/> 
+                                       <Condition Binding="{Binding ElementName=InputPassword,Path=Password.Length}" Value="0"/> 
+                                    </MultiDataTrigger.Conditions>
+                                    <MultiDataTrigger.Setters>
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </MultiDataTrigger.Setters>
+                                </MultiDataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                   </Button.Style>
+               </Button>
+               <Button x:Name="ButtonLogin"
+                       Content="Login">
+                   <Button.Style>
+                       <Style BasedOn="{StaticResource StyleButtonLogin}"
+                              TargetType="{x:Type Button}">
+                           <Style.Triggers>
+                               <MultiDataTrigger>
+                                   <MultiDataTrigger.Conditions>
+                                       <Condition Binding="{Binding ElementName=InputLogin,Path=Text.Length}" Value="0"/> 
+                                       <Condition Binding="{Binding ElementName=InputPassword,Path=Password.Length}" Value="0"/> 
+                                   </MultiDataTrigger.Conditions>
+                                   <MultiDataTrigger.Setters>
+                                       <Setter Property="IsEnabled" Value="False"/>
+                                   </MultiDataTrigger.Setters>
+                               </MultiDataTrigger>
+                           </Style.Triggers>
+                       </Style>
+                   </Button.Style>
+               </Button>
+            </StackPanel>  
+            
+            <StackPanel >
+                <Button x:Name="ButtonRestore"
+                        Content="Restore"/>
+                <Button x:Name="ButtonRegister"
+                        Content="Register"/>
+            </StackPanel>  
+        </StackPanel>
+    </StackPanel>
 </Window>
