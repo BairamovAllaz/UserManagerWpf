@@ -4,10 +4,12 @@ using Xunit;
 namespace UserManager.Models.Test;
 public class TableUserTest
 {
-    [Fact]
-    public void GetTable_Test()
+    private List<User> _expected;
+    private TableUser _tableUser;
+    public TableUserTest()
     {
-        var expected = new List<User>
+        _tableUser = new TableUser();
+        _expected = new List<User>
         {
             new()
             {
@@ -26,22 +28,20 @@ public class TableUserTest
                 PhotoUrl = "url"
             },
         };
-        var actual = new TableUser().GetTable();
-        Assert.Equal(expected,actual);
+    }
+    [Fact]
+    public void GetTable_Test()
+    {
+        var actual = _tableUser.GetTable();
+        Assert.Equal(_expected,actual);
     }
     [Fact]
     public void AddToTable_Test()
     {
-        var FakeUser = new User
-        {
-            Id = 3,
-            FirstName = "anonim",
-            LastName = "anonimus",
-            Email = "anonim@admin.ru",
-            PhotoUrl = "url"
-        };
-        var expected = 1;
-        var actual = new TableUser().AddToTable(FakeUser);
-        Assert.Equal(expected,actual);
+        var user = new User { FirstName = "user", LastName = "anonimus", Email = "user@admin.ru", PhotoUrl = "url" };
+        _expected.Add(user);
+        _tableUser.AddToTable(user);
+        var actual = _tableUser.GetTable();
+        Assert.Equal(_expected, actual);
     }
 }

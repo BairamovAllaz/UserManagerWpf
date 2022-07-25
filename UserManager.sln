@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager.Models", "UserM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager.Models.Test", "UserManager.Models.Test\UserManager.Models.Test.csproj", "{D90488FA-1461-4358-88EB-A1ECAD7944AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserManager.App", "UserManager.App\UserManager.App.csproj", "{20956470-AC0A-4428-9754-7B896B2767C6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{D90488FA-1461-4358-88EB-A1ECAD7944AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D90488FA-1461-4358-88EB-A1ECAD7944AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D90488FA-1461-4358-88EB-A1ECAD7944AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20956470-AC0A-4428-9754-7B896B2767C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20956470-AC0A-4428-9754-7B896B2767C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20956470-AC0A-4428-9754-7B896B2767C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20956470-AC0A-4428-9754-7B896B2767C6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -9,7 +9,7 @@ public class Role : IEquatable<Role>
     {
         if (ReferenceEquals(null, other)) return false;
         if (ReferenceEquals(this, other)) return true;
-        return Id == other.Id && Name == other.Name;
+        return Name == other.Name;
     }
 
     public override bool Equals(object? obj)
@@ -22,6 +22,6 @@ public class Role : IEquatable<Role>
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Id, Name);
+        return HashCode.Combine(Name);
     }
 }

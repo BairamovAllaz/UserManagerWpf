@@ -5,10 +5,13 @@ using Xunit;
 namespace UserManager.Models.Test;
 public class TableRoleTest
 {
-    [Fact]
-    public void GetTable_Test()
+    private List<Role> _expected;
+    private TableRole _tableRole;
+    
+    public TableRoleTest()
     {
-        var expected = new List<Role>
+        _tableRole = new TableRole();
+        _expected = new List<Role>
         {
             new()
             {
@@ -21,21 +24,21 @@ public class TableRoleTest
                 Name = "user",
             },
         };
+    }
+    [Fact]
+    public void GetTable_Test()
+    {
         var tableRole = new TableRole();
         var actual = tableRole.GetTable();
-        Assert.Equal(expected,actual);
+        Assert.Equal(_expected,actual);
     }
 
     [Fact]
     public void AddToTable_Test()
     {
-        var FakeRole = new Role
+        _expected.Add(new()
         {
-            Id = 3,
-            Name = "user",
-        };
-        var expected = 1;
-        var actual = new TableRole().AddToTable(FakeRole);
-        Assert.Equal(expected,actual);
+            
+        });
     }
 }

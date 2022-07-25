@@ -12,7 +12,7 @@ public class User : IEquatable<User>
     {
         if (ReferenceEquals(null, other)) return false;
         if (ReferenceEquals(this, other)) return true;
-        return Id == other.Id && FirstName == other.FirstName && LastName == other.LastName && Email == other.Email && PhotoUrl == other.PhotoUrl;
+        return FirstName == other.FirstName && LastName == other.LastName && Email == other.Email && PhotoUrl == other.PhotoUrl;
     }
 
     public override bool Equals(object? obj)
@@ -25,6 +25,6 @@ public class User : IEquatable<User>
 
     public override int GetHashCode()
     {
-        return HashCode.Combine(Id, FirstName, LastName, Email, PhotoUrl);
+        return HashCode.Combine(FirstName, LastName, Email, PhotoUrl);
     }
 }

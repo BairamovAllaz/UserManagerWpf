@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using UserManager.Models.Table;
 using Xunit;
-
 namespace UserManager.Models.Test;
-
 public class TableAccountTest
 {
-    [Fact]
-    public void GetTable_Test()
+    private List<Account> _expected;
+    private TableAccount _tableAccount;
+
+    public TableAccountTest()
     {
-        var expected = new List<Account>
+        _tableAccount = new TableAccount();
+        _expected = new List<Account>
         {
             new()
             {
@@ -26,25 +27,29 @@ public class TableAccountTest
                 Password = "123",
                 RoleId = 2,
                 IsActive = true
-            },
+            }
         };
-        var actual = new TableAccount().GetTable();
-        Assert.Equal(expected,actual);
+    }
+    [Fact]
+    public void GetTable_Test()
+    {
+        var actual = _tableAccount.GetTable();
+        Assert.Equal(_expected,actual);
     }
 
     [Fact]
     public void AddToTable_Test()
     {
-        var FakeAccount = new Account()
+        var account = new Account()
         {
-            Id = 3,
-            Login = "FakeUser",
+            Login = "user",
             Password = "123",
-            RoleId = 1,
+            RoleId = 2,
             IsActive = true
-        };
-        var expected = 1;
-        var actual = new TableAccount().AddToTable(FakeAccount);
-        Assert.Equal(expected,actual);
+        }; 
+        _expected.Add(account);
+        _tableAccount.AddToTable(account);
+        var actual = _tableAccount.GetTable();
+        Assert.Equal(_expected,actual);
     }
 }

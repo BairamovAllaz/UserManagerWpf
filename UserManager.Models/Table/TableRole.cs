@@ -28,9 +28,9 @@ public class TableRole : Db,IGetTable<Role>,IAddToTable<Role>
         return list;
     }
 
-    public int AddToTable(Role obj)
+    public void AddToTable(Role obj)
     {
         var sql = $"INSERT INTO table_role (role_id,role_name) VALUES ('{obj.Id}','{obj.Name}')";
-        return NoQuery(sql);
+        NoQuery(sql);
     }
 }
