@@ -18,7 +18,7 @@
                Content="Authorization"
                Style="{DynamicResource StyleTitle}"/>
         <StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Style="{DynamicResource StyleStackPanelHorizontalLeft}">
                 <Label x:Name="LabelLogin"
                        Content="_Login"
                        Target="{Binding ElementName=InputLogin}"
@@ -27,7 +27,7 @@
                          Style="{DynamicResource StyleInput}"/>
             </StackPanel>    
             
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Style="{DynamicResource StyleStackPanelHorizontalLeft}">
                 <Label x:Name="LabelPassword"
                        Content="Password"
                        Style="{DynamicResource StyleLabel}"/>
@@ -35,9 +35,10 @@
                              Style="{DynamicResource StylePassword}"/>
             </StackPanel>  
             
-            <StackPanel Style="{DynamicResource StyleStackHorizontalCenter}">
+            <StackPanel Style="{DynamicResource StyleStackPanelHorizontalCenter}">
                <Button x:Name="ButtonClear"
-                       Content="Clear">
+                       Content="Clear"
+                       Click="ButtonClear_OnClick">
                    <Button.Style>
                         <Style BasedOn="{StaticResource StyleButtonClear}"
                                TargetType="{x:Type Button}">
@@ -56,7 +57,8 @@
                    </Button.Style>
                </Button>
                <Button x:Name="ButtonLogin"
-                       Content="Login">
+                       Content="Login"
+                       Click="ButtonLogin_OnClick">
                    <Button.Style>
                        <Style BasedOn="{StaticResource StyleButtonLogin}"
                               TargetType="{x:Type Button}">
@@ -76,7 +78,7 @@
                </Button>
             </StackPanel>  
             
-            <StackPanel >
+            <StackPanel Orientation="Horizontal">
                 <Button x:Name="ButtonRestore"
                         Content="Restore"/>
                 <Button x:Name="ButtonRegister"

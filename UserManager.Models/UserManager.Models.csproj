@@ -11,4 +11,10 @@
       <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.0-preview.6.22329.4" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Content Include="bin\Debug\net6.0\user.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
 </Project>

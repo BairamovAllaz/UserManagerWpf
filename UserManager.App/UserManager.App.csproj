@@ -7,4 +7,24 @@
         <UseWPF>true</UseWPF>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\UserManager.Models\UserManager.Models.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Include="bin\Debug\net6.0-windows\bin\Debug\net6.0\user.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="bin\Debug\net6.0-windows\runtimes\user.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+      <Content Include="bin\Debug\net6.0-windows\user.db">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Components\InputPassword" />
+    </ItemGroup>
+
 </Project>

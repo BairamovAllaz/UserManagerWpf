@@ -52,17 +52,18 @@
            BasedOn="{StaticResource StyleDefaultButton}">
         <Setter Property="Background" Value="DarkBlue"/>
     </Style>
-    <Style x:Key="StyleStackHorizontal"
+    <Style x:Key="StyleStackPanelHorizontal"
            TargetType="{x:Type StackPanel}">
         <Setter Property="Orientation" Value="Horizontal"/>
     </Style>
-    <Style x:Key="StyleStackHorizontalLeft"
-           TargetType="{x:Type StackPanel}">
+    <Style x:Key="StyleStackPanelHorizontalLeft"
+           TargetType="{x:Type StackPanel}"
+           BasedOn="{StaticResource StyleStackPanelHorizontal}">
         <Setter Property="HorizontalAlignment" Value="Left"/>
     </Style>
-    
-    <Style x:Key="StyleStackHorizontalCenter"
-           TargetType="{x:Type StackPanel}">
+    <Style x:Key="StyleStackPanelHorizontalCenter"
+           TargetType="{x:Type StackPanel}"
+           BasedOn="{StaticResource StyleStackPanelHorizontal}">
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
 </ResourceDictionary>

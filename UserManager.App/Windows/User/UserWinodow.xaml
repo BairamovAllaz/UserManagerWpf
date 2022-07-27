@@ -1,0 +1,33 @@
+﻿<Window x:Class="UserManager.App.Windows.User.UserWinodow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:input="clr-namespace:UserManager.App.Components.InputText"
+        mc:Ignorable="d"
+        Title="UserWinodow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Image x:Name="UserPhoto"/>
+            <Button x:Name="ButtonChangePhoto"
+                    Content="Change Photo"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <input:InputTextComponent LabelContent="Login"/>
+            <input:InputTextComponent LabelContent="Password"/>
+            <input:InputTextComponent LabelContent="LastName"/>
+            <input:InputTextComponent LabelContent="FirstName"/>
+            <input:InputTextComponent LabelContent="Email"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="ButtonClear"
+                        Content="Clear"/>
+                <Button x:Name="ButtonSave"
+                        Content="Save"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
